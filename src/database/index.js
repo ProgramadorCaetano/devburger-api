@@ -17,8 +17,8 @@ class Database {
         this.mongo();
     }
     init(){
-        //this.connection = new Sequelize(configDatabase);
-        this.connection = new Sequelize('postgresql://postgres:qvexGzVBDVKZbcELYPpRrmlKDBrneeVz@autorack.proxy.rlwy.net:32425/railway');
+        this.connection = new Sequelize(configDatabase);
+        ///this.connection = new Sequelize('postgresql://postgres:qvexGzVBDVKZbcELYPpRrmlKDBrneeVz@autorack.proxy.rlwy.net:32425/railway');
         models.map((model) => model.init(this.connection)).map(
             (model) => model.associate && model.associate(this.connection.models),
         );
@@ -26,8 +26,8 @@ class Database {
 
     mongo() {
         this.mongoConnection = mongoose.connect(
-            //'mongodb://localhost:27017/devburger',
-            'mongodb://mongo:VvaiKpUvmBFebBxGgEIbRYTTiWxjrpip@junction.proxy.rlwy.net:24391',
+            'mongodb://localhost:27017/devburger',
+            ///'mongodb://mongo:VvaiKpUvmBFebBxGgEIbRYTTiWxjrpip@junction.proxy.rlwy.net:24391',
 
         );
     }
